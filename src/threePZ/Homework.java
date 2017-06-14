@@ -12,7 +12,7 @@ public class Homework {
         ArrayList<java.lang.Integer> t = new ArrayList<>();
         //кол-во дней в месяце
         Calendar calendar = GregorianCalendar.getInstance();// возвращает объект класса GregorianCalendar, инициированный текущей датой и временем согласно региональным настройкам
-        calendar.set(Calendar.MONTH, 0);//нумерация месяцев с нуля, пишем сюда номер нужного месяца
+        calendar.get(Calendar.MONTH);//нумерация месяцев с нуля, пишем сюда номер нужного месяца
         int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);//возвращает максимальное значение, которое Calendar.DAY_OF_MONTH может иметь
         for (int i = 0; i < maxDays; i++) {
             Scanner in = new Scanner(System.in);
