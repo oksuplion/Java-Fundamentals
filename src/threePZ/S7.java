@@ -2,18 +2,20 @@
 package threePZ;
 class S7 {//создаю класс с именем S7
     private String string = "SummerS nice stay days goa holA ";
-    private int a= 0;//создаю переменную и инициализирую ее
-    private int s = 0;//создаю переменную и инициализирую ее
-    public void count(){//ф-ция кол-ва слов
+    private int a = 0;
+    private int s = 0;
+
+    public void count() {//ф-ция кол-ва слов
         string = string.toLowerCase();//перевожу строку в маленькие буквы
-        for (int i = 0; i<string.length(); i++){//цикл индексов строки
-            if(string.charAt(i) == ' '){//если символ на позиции i равен пробелу
-                if (string.charAt(i-1) == 'a')//и символ пере пробелом равен a
-                    a++;//увеличиваю счетчик для а
-                if (string.charAt(i-1) == 's')//и символ пере пробелом равен s
-                    s++;//увеличиваю счетчик для s
+        final String sentences[] = string.split("[ ]\\s*");//разбила по словам
+        for (int i = 0; i < sentences.length; i++) {
+            if ((sentences[i].charAt(0) == 's')&& (sentences[i].charAt(sentences[i].length()-1) == 's')) {
+                s++;
+            }
+            if ((sentences[i].charAt(0) == 'a')&& (sentences[i].charAt(sentences[i].length()-1) == 'a')) {
+                a++;
             }
         }
-        System.out.println("a = " + a + "  " + "s = " + s);//вывожу строку на экран
+        System.out.println("a = " + a + "  " + "s = " + s);
     }
 }
